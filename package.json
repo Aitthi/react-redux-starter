@@ -17,6 +17,7 @@
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-1": "^6.24.1",
+    "class-to-classname": "^1.0.1",
     "css-loader": "^0.28.10",
     "file-loader": "^1.1.11",
     "style-loader": "^0.20.3",
@@ -27,6 +28,7 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "nprogress": "^0.2.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-redux": "^5.0.7",
