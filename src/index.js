@@ -5,9 +5,11 @@ import { createStore, applyMiddleware } from 'redux'
 import ReduxPromise from "redux-promise"
 import { BrowserRouter, Route, Switch } from "react-router-dom"
 
+/// Components
 import NavBar from './components/nav-bar'
-import HomePage from './pages/home-page'
-import ContentPage from './pages/content-page'
+import LoadPages from './components/load-page'
+
+import routes from './routes'
 import reducers from './reducers'
 
 import './style.css'
@@ -16,15 +18,14 @@ const createStoreWithMiddleware = applyMiddleware(ReduxPromise)(createStore)
 ReactDOM.render(
   <Provider store={createStoreWithMiddleware(reducers)}>
     <BrowserRouter>
-      <div>
+      <main>
         <NavBar />
         <Switch>          
-          <Route path="/content" component={ContentPage} />
-          
-          {/* Home Page */}
-          <Route path="/" component={HomePage} />
+          {routes.map((route, i) =>
+            <LoadPages key={i} {...route} />                      
+          )}
         </Switch>
-      </div>
+      </main>
     </BrowserRouter>
   </Provider>
   , document.getElementById('rootApp'))
