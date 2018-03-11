@@ -17,6 +17,10 @@ module.exports = {
         loader: "class-to-classname"
       },
       {
+        test: /\.html$/,
+        loader: 'html-loader'
+      },
+      {
         test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot|ico)$/,
         loader: 'file-loader?name=assets/[name].[hash].[ext]'
       },

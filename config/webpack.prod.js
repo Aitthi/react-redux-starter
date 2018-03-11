@@ -2,6 +2,7 @@ var webpack = require('webpack')
 var webpackMerge = require('webpack-merge')
 var commonConfig = require('./webpack.common.js')
 var helpers = require('./helpers')
+var HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = webpackMerge(commonConfig, {
   output: {
@@ -16,6 +17,9 @@ module.exports = webpackMerge(commonConfig, {
       'process.env': {
         'ENV': 'production'
       }
+    }),
+    new HtmlWebpackPlugin({
+      template: 'index.html'
     })
   ]
 })

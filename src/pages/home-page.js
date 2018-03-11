@@ -5,7 +5,7 @@ class HomePage extends Component {
   rederList(example){
     return(
       example.map((item, i)=>{
-        return <li key={i} style={{float:'unset','font-size': '22px'}}>{item.title}</li>
+        return <li key={i} style={{float:'unset',fontSize: '22px'}}>{item.title}</li>
       })
     )
   }
@@ -13,7 +13,7 @@ class HomePage extends Component {
     return (
       <div>
         <h1>Home Page</h1>
-        <ul style={{'background-color':'#fff'}}>
+        <ul style={{backgroundColor:'#fff'}}>
           {this.rederList(this.props.example)}
         </ul>
       </div>
